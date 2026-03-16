@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SofaLux · About us</title>
+  <!-- Tailwind via CDN + warm luxury palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: modern sans + elegant serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* custom smooth hover & premium touches */
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -12px rgba(90, 70, 55, 0.15);
+    }
+    .btn-add {
+      transition: all 0.2s;
+    }
+    /* subtle underline animation for nav */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #a1806b; /* warm brown */
+      transition: width 0.2s;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-[#fcf9f5] text-[#2e2b27] antialiased">
+
+  <!-- navigation bar (sticky, cream/white) -->
+  <nav class="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b border-[#ede6dd] px-5 md:px-10 py-4 flex items-center justify-between">
+    <!-- left: logo -->
+    <div class="font-serif text-3xl font-semibold text-[#6b4f3f] tracking-tight">SofaLux</div>
+    
+    <!-- center menu (hidden on mobile, flex on md) -->
+    <ul class="hidden md:flex items-center space-x-8 text-[#5e4f46] font-medium">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="#" class="nav-link">Shop</a></li>
+      <li><a href="#" class="nav-link">Categories</a></li>
+      <li><a href="about.html" class="nav-link">About</a></li>
+      <li><a href="contact.html" class="nav-link">Contact</a></li>
+    </ul>
+    
+    <!-- right: cart + mobile menu toggle -->
+    <div class="flex items-center space-x-4">
+      <i class="fas fa-shopping-cart text-2xl text-[#6b4f3f] cursor-pointer hover:text-[#a1806b]"></i>
+      <!-- mobile hamburger (md:hidden) -->
+      <button id="menuBtn" class="block md:hidden text-2xl text-[#6b4f3f]">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- mobile dropdown menu (hidden by default) -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white/95 px-6 py-4 border-b border-[#ede6dd] flex flex-col space-y-3 text-[#5e4f46] font-medium">
+    <a href="index.html" class="py-1 hover:text-[#6b4f3f]">Home</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Shop</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Categories</a>
+    <a href="about.html" class="py-1 hover:text-[#6b4f3f]">About</a>
+    <a href="contact.html" class="py-1 hover:text-[#6b4f3f]">Contact</a>
+  </div>
+
+  <!-- ABOUT PAGE CONTENT ============================================= -->
+
+  <!-- page heading -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-20">
+    <h1 class="font-serif text-5xl md:text-6xl text-[#6b4f3f]">About SofaLux</h1>
+    <p class="text-lg text-[#5e4f46] max-w-3xl mt-4">Crafting comfort since 2010, we blend timeless design with modern luxury — because every home deserves a story.</p>
+  </div>
+
+  <!-- our story (image + text) -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-16">
+    <div class="bg-[#faf3ec] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-inner">
+      <div class="md:w-1/2">
+        <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=600" alt="craftsmanship" class="rounded-2xl shadow-lg w-full h-64 object-cover">
+      </div>
+      <div class="md:w-1/2">
+        <h2 class="font-serif text-3xl text-[#6b4f3f]">Our story</h2>
+        <p class="mt-4 text-[#5e4f46] text-lg leading-relaxed">What started as a small workshop in Vermont is now a destination for those who appreciate understated luxury. We partner with master artisans who use time‑honored techniques and sustainably sourced materials. Every SofaLux piece carries a legacy of comfort and intention.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- values (icon grid) -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-24">
+    <h2 class="font-serif text-3xl md:text-4xl text-[#6b4f3f] border-b border-[#ede6dd] pb-2 inline-block">Why we’re different</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#f1efec] text-center">
+        <i class="fas fa-leaf text-4xl text-[#a1806b]"></i>
+        <h3 class="font-serif text-xl mt-4 text-[#6b4f3f]">Sustainable materials</h3>
+        <p class="text-[#5e4f46] mt-2">We source reclaimed wood, non‑toxic finishes, and certified fabrics that age beautifully.</p>
+      </div>
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#f1efec] text-center">
+        <i class="fas fa-hand-sparkles text-4xl text-[#a1806b]"></i>
+        <h3 class="font-serif text-xl mt-4 text-[#6b4f3f]">Artisan craftsmanship</h3>
+        <p class="text-[#5e4f46] mt-2">Each frame is carved, stitched, and assembled by hands that have honed their skill for decades.</p>
+      </div>
+      <div class="bg-white p-8 rounded-3xl shadow-sm border border-[#f1efec] text-center">
+        <i class="fas fa-clock text-4xl text-[#a1806b]"></i>
+        <h3 class="font-serif text-xl mt-4 text-[#6b4f3f]">Lifetime comfort</h3>
+        <p class="text-[#5e4f46] mt-2">We design for heirloom status — cushions that keep their shape, joinery that lasts generations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- meet the team -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-24">
+    <h2 class="font-serif text-3xl md:text-4xl text-[#6b4f3f] border-b border-[#ede6dd] pb-2 inline-block">The people behind the pieces</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6 mt-10">
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden text-center">
+        <img src="https://images.pexels.com/photos/3778212/pexels-photo-3778212.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Elena" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium text-[#2e2b27]">Elena Voss</h3>
+          <p class="text-[#a1806b] text-sm">Lead Designer</p>
+        </div>
+      </div>
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden text-center">
+        <img src="https://images.pexels.com/photos/3779763/pexels-photo-3779763.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Marcus" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium">Marcus Tan</h3>
+          <p class="text-[#a1806b] text-sm">Master Upholsterer</p>
+        </div>
+      </div>
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden text-center">
+        <img src="https://images.pexels.com/photos/3778603/pexels-photo-3778603.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Sofia" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium">Sofia Rivas</h3>
+          <p class="text-[#a1806b] text-sm">Sustainability Lead</p>
+        </div>
+      </div>
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden text-center">
+        <img src="https://images.pexels.com/photos/697509/pexels-photo-697509.jpeg?auto=compress&cs=tinysrgb&w=400" alt="James" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-medium">James Keller</h3>
+          <p class="text-[#a1806b] text-sm">Woodworking Artisan</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- newsletter section (warm neutral) – same as homepage -->
+  <div class="max-w-5xl mx-auto mt-24 px-5">
+    <div class="bg-[#e8dfd5] rounded-4xl p-10 md:p-14 text-center shadow-md" style="border-radius: 3rem;">
+      <h2 class="font-serif text-3xl md:text-4xl text-[#4f3f35]">Subscribe to serenity</h2>
+      <p class="mt-3 text-[#5e4f46]">Get exclusive deals, design inspiration & new arrivals.</p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mt-8">
+        <input type="email" placeholder="Your email" id="newsletterEmail" class="px-6 py-4 rounded-full border-0 flex-1 focus:ring-2 focus:ring-[#a1806b] placeholder-[#9b8a7a]">
+        <button id="newsletterBtn" class="bg-[#6b4f3f] hover:bg-[#83624b] text-white px-8 py-4 rounded-full font-medium transition shadow-md">Subscribe</button>
+      </div>
+      <p id="newsletterMsg" class="text-sm mt-4 text-[#6b4f3f]"></p>
+    </div>
+  </div>
+
+  <!-- footer (exact same as homepage) -->
+  <footer class="bg-[#f2ebe2] mt-24 pt-14 pb-8 border-t border-[#d6c9bc]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <div>
+        <h4 class="font-serif text-xl text-[#6b4f3f] mb-4">SofaLux</h4>
+        <p class="text-[#5e4f46]">hello@sofalux.com</p>
+        <p class="text-[#5e4f46]">+1 (800) 456-7890</p>
+        <p class="text-[#5e4f46] mt-2">123 Design Ave, NY</p>
+      </div>
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Explore</h4>
+        <ul class="space-y-2 text-[#5e4f46]">
+          <li><a href="index.html" class="hover:text-[#6b4f3f]">Home</a></li>
+          <li><a href="#" class="hover:text-[#6b4f3f]">Shop</a></li>
+          <li><a href="#" class="hover:text-[#6b4f3f]">Categories</a></li>
+          <li><a href="about.html" class="hover:text-[#6b4f3f]">About us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Connect</h4>
+        <div class="flex space-x-5 text-2xl text-[#6b4f3f]">
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-houzz"></i></a>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Craftsmanship</h4>
+        <p class="text-[#5e4f46] text-sm leading-relaxed">Premium materials, timeless design, and comfort that lasts.</p>
+      </div>
+    </div>
+    <div class="text-center text-[#8e7a6b] text-sm mt-14 border-t border-[#dacfc3] pt-6">© 2026 SofaLux — luxury comfort for every home.</div>
+  </footer>
+
+  <!-- tiny js: mobile menu + newsletter feedback (same as homepage) -->
+  <script>
+    (function() {
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      const subBtn = document.getElementById('newsletterBtn');
+      const emailInput = document.getElementById('newsletterEmail');
+      const msgBox = document.getElementById('newsletterMsg');
+
+      if (subBtn) {
+        subBtn.addEventListener('click', function() {
+          const email = emailInput.value.trim();
+          if (email && email.includes('@') && email.includes('.')) {
+            msgBox.innerText = '✨ Thank you! You’re now subscribed to SofaLux updates.';
+            emailInput.value = '';
+          } else {
+            msgBox.innerText = 'Please enter a valid email address.';
+          }
+        });
+      }
+
+      const addButtons = document.querySelectorAll('.btn-add');
+      addButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const originalText = this.innerText;
+          this.innerText = '✓ Added';
+          this.style.backgroundColor = '#a1806b';
+          this.style.color = 'white';
+          setTimeout(() => {
+            this.innerText = originalText;
+            this.style.backgroundColor = '';
+            this.style.color = '';
+          }, 1200);
+        });
+      });
+    })();
+  </script>
+  <script>
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) {
+        const mobile = document.getElementById('mobileMenu');
+        if (mobile && !mobile.classList.contains('hidden')) {
+          mobile.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
