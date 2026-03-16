@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SofaLux · modern luxury furniture</title>
+  <!-- Tailwind via CDN + warm luxury palette -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Font Awesome icons (free) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts: modern sans + elegant serif -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    /* custom smooth hover & premium touches */
+    body { font-family: 'Inter', sans-serif; }
+    .font-serif { font-family: 'Playfair Display', serif; }
+    .product-card {
+      transition: transform 0.25s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -12px rgba(90, 70, 55, 0.15);
+    }
+    .btn-add {
+      transition: all 0.2s;
+    }
+    /* subtle underline animation for nav */
+    .nav-link {
+      position: relative;
+    }
+    .nav-link:after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -4px;
+      left: 0;
+      background-color: #a1806b; /* warm brown */
+      transition: width 0.2s;
+    }
+    .nav-link:hover:after {
+      width: 100%;
+    }
+  </style>
+</head>
+<body class="bg-[#fcf9f5] text-[#2e2b27] antialiased">
+
+  <!-- navigation bar (sticky, cream/white) -->
+  <nav class="sticky top-0 z-30 bg-white/90 backdrop-blur-sm border-b border-[#ede6dd] px-5 md:px-10 py-4 flex items-center justify-between">
+    <!-- left: logo -->
+    <div class="font-serif text-3xl font-semibold text-[#6b4f3f] tracking-tight">SofaLux</div>
+    
+    <!-- center menu (hidden on mobile, flex on md) -->
+    <ul class="hidden md:flex items-center space-x-8 text-[#5e4f46] font-medium">
+      <li><a href="#" class="nav-link">Home</a></li>
+      <li><a href="#" class="nav-link">Shop</a></li>
+      <li><a href="#" class="nav-link">Categories</a></li>
+      <li><a href="#" class="nav-link">About</a></li>
+      <li><a href="#" class="nav-link">Contact</a></li>
+    </ul>
+    
+    <!-- right: cart + mobile menu toggle -->
+    <div class="flex items-center space-x-4">
+      <i class="fas fa-shopping-cart text-2xl text-[#6b4f3f] cursor-pointer hover:text-[#a1806b]"></i>
+      <!-- mobile hamburger (md:hidden) -->
+      <button id="menuBtn" class="block md:hidden text-2xl text-[#6b4f3f]">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+  
+  <!-- mobile dropdown menu (hidden by default) -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white/95 px-6 py-4 border-b border-[#ede6dd] flex flex-col space-y-3 text-[#5e4f46] font-medium">
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Home</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Shop</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Categories</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">About</a>
+    <a href="#" class="py-1 hover:text-[#6b4f3f]">Contact</a>
+  </div>
+
+  <!-- hero section (modern living room background) -->
+  <section class="relative mx-4 md:mx-8 mt-3 rounded-3xl overflow-hidden bg-cover bg-center min-h-[500px] flex items-center" 
+    style="background-image: linear-gradient(95deg, rgba(250,247,242,0.8) 0%, rgba(250,247,242,0.3) 60%), url('https://images.pexels.com/photos/1571460/pexels-photo-1571460.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');">
+    <div class="px-6 md:px-16 py-12 max-w-2xl">
+      <h1 class="font-serif text-5xl md:text-6xl font-medium leading-tight text-[#3f2f26] drop-shadow-sm">Luxury Comfort <br>for Every Home</h1>
+      <button class="mt-8 bg-[#6b4f3f] hover:bg-[#83624b] text-white px-8 py-4 rounded-full text-lg font-medium shadow-lg hover:shadow-xl transition transform hover:scale-[1.02]">Shop Now</button>
+    </div>
+  </section>
+
+  <!-- featured furniture section -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-20">
+    <h2 class="font-serif text-3xl md:text-4xl font-medium text-[#6b4f3f] border-b border-[#ede6dd] pb-2 inline-block">Featured collection</h2>
+    
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-6 mt-10">
+      <!-- product 1: sofa -->
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden flex flex-col">
+        <img src="https://images.pexels.com/photos/276551/pexels-photo-276551.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Harmony Sofa" class="w-full h-44 object-cover">
+        <div class="p-4 flex-1">
+          <h3 class="font-medium text-[#2e2b27]">Harmony Sofa</h3>
+          <p class="text-[#a1806b] text-lg font-semibold mt-1">$1,299</p>
+        </div>
+        <button class="btn-add mx-3 mb-4 border border-[#a1806b] text-[#6b4f3f] hover:bg-[#a1806b] hover:text-white rounded-full py-2 text-sm font-medium transition">Add to Cart</button>
+      </div>
+      <!-- product 2: armchair -->
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden flex flex-col">
+        <img src="https://images.pexels.com/photos/1350789/pexels-photo-1350789.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Cozy Armchair" class="w-full h-44 object-cover">
+        <div class="p-4 flex-1">
+          <h3 class="font-medium">Cloud Armchair</h3>
+          <p class="text-[#a1806b] text-lg font-semibold mt-1">$549</p>
+        </div>
+        <button class="btn-add mx-3 mb-4 border border-[#a1806b] text-[#6b4f3f] hover:bg-[#a1806b] hover:text-white rounded-full py-2 text-sm font-medium">Add to Cart</button>
+      </div>
+      <!-- product 3: bed -->
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden flex flex-col">
+        <img src="https://images.pexels.com/photos/90319/pexels-photo-90319.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Serene Bed" class="w-full h-44 object-cover">
+        <div class="p-4 flex-1">
+          <h3 class="font-medium">Serene Bed</h3>
+          <p class="text-[#a1806b] text-lg font-semibold mt-1">$1,890</p>
+        </div>
+        <button class="btn-add mx-3 mb-4 border border-[#a1806b] text-[#6b4f3f] hover:bg-[#a1806b] hover:text-white rounded-full py-2 text-sm font-medium">Add to Cart</button>
+      </div>
+      <!-- product 4: dining table -->
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden flex flex-col">
+        <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Maple Dining Table" class="w-full h-44 object-cover">
+        <div class="p-4 flex-1">
+          <h3 class="font-medium">Maple Table</h3>
+          <p class="text-[#a1806b] text-lg font-semibold mt-1">$899</p>
+        </div>
+        <button class="btn-add mx-3 mb-4 border border-[#a1806b] text-[#6b4f3f] hover:bg-[#a1806b] hover:text-white rounded-full py-2 text-sm font-medium">Add to Cart</button>
+      </div>
+      <!-- product 5: coffee table -->
+      <div class="product-card bg-white rounded-2xl shadow-sm border border-[#f1efec] overflow-hidden flex flex-col">
+        <img src="https://images.pexels.com/photos/279618/pexels-photo-279618.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Nordic Coffee Table" class="w-full h-44 object-cover">
+        <div class="p-4 flex-1">
+          <h3 class="font-medium">Nordic Table</h3>
+          <p class="text-[#a1806b] text-lg font-semibold mt-1">$429</p>
+        </div>
+        <button class="btn-add mx-3 mb-4 border border-[#a1806b] text-[#6b4f3f] hover:bg-[#a1806b] hover:text-white rounded-full py-2 text-sm font-medium">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- categories section -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-24">
+    <h2 class="font-serif text-3xl md:text-4xl font-medium text-[#6b4f3f] border-b border-[#ede6dd] pb-2 inline-block">Shop by category</h2>
+    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 mt-10">
+      <div class="bg-[#ede6dd] hover:bg-[#e0d5ca] transition rounded-3xl py-8 text-center shadow-sm cursor-pointer border border-white/30">
+        <i class="fas fa-couch text-3xl text-[#6b4f3f]"></i>
+        <p class="mt-3 font-medium text-[#4a3b32]">Sofas</p>
+      </div>
+      <div class="bg-[#ede6dd] hover:bg-[#e0d5ca] transition rounded-3xl py-8 text-center shadow-sm cursor-pointer">
+        <i class="fas fa-chair text-3xl text-[#6b4f3f]"></i>
+        <p class="mt-3 font-medium text-[#4a3b32]">Living Room</p>
+      </div>
+      <div class="bg-[#ede6dd] hover:bg-[#e0d5ca] transition rounded-3xl py-8 text-center shadow-sm cursor-pointer">
+        <i class="fas fa-bed text-3xl text-[#6b4f3f]"></i>
+        <p class="mt-3 font-medium text-[#4a3b32]">Bedroom</p>
+      </div>
+      <div class="bg-[#ede6dd] hover:bg-[#e0d5ca] transition rounded-3xl py-8 text-center shadow-sm cursor-pointer">
+        <i class="fas fa-utensils text-3xl text-[#6b4f3f]"></i>
+        <p class="mt-3 font-medium text-[#4a3b32]">Dining</p>
+      </div>
+      <div class="bg-[#ede6dd] hover:bg-[#e0d5ca] transition rounded-3xl py-8 text-center shadow-sm cursor-pointer">
+        <i class="fas fa-lamp text-3xl text-[#6b4f3f]"></i>
+        <p class="mt-3 font-medium text-[#4a3b32]">Office</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- about section (cream / white card) -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-24">
+    <div class="bg-[#faf3ec] rounded-3xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 shadow-inner">
+      <div class="md:w-1/2">
+        <h2 class="font-serif text-3xl md:text-4xl font-medium text-[#6b4f3f]">Designed for comfort, built to last</h2>
+        <p class="mt-6 text-[#5e4f46] text-lg leading-relaxed">At SofaLux, we believe furniture should feel as good as it looks. Every piece is crafted with premium materials, timeless silhouettes, and a touch of warmth — because your home deserves nothing less.</p>
+      </div>
+      <div class="md:w-1/2 grid grid-cols-2 gap-3">
+        <img src="https://images.pexels.com/photos/2089698/pexels-photo-2089698.jpeg?auto=compress&cs=tinysrgb&w=400" class="rounded-2xl h-40 object-cover w-full shadow-md">
+        <img src="https://images.pexels.com/photos/245208/pexels-photo-245208.jpeg?auto=compress&cs=tinysrgb&w=400" class="rounded-2xl h-40 object-cover w-full shadow-md">
+      </div>
+    </div>
+  </div>
+
+  <!-- customer testimonials -->
+  <div class="max-w-7xl mx-auto px-5 md:px-8 mt-24">
+    <h2 class="font-serif text-3xl md:text-4xl font-medium text-[#6b4f3f] border-b border-[#ede6dd] pb-2 inline-block">Kind words</h2>
+    <div class="grid md:grid-cols-3 gap-6 mt-10">
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-[#f1efec]">
+        <i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i>
+        <p class="mt-4 text-[#4f3f35] italic">“The Harmony sofa is unbelievably plush. My family fights over who gets to sit there. Quality is top tier.”</p>
+        <div class="mt-6 font-medium">— Emma W.</div>
+      </div>
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-[#f1efec]">
+        <i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i>
+        <p class="mt-4 text-[#4f3f35] italic">“Elegant, sturdy dining table. It arrived quickly and feels heirloom-quality. SofaLux exceeded expectations.”</p>
+        <div class="mt-6 font-medium">— Marcus L.</div>
+      </div>
+      <div class="bg-white p-6 rounded-3xl shadow-sm border border-[#f1efec]">
+        <i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i><i class="fas fa-star text-amber-500"></i>
+        <p class="mt-4 text-[#4f3f35] italic">“I bought the Cloud armchair for my reading nook. It’s like sitting on a cloud — truly luxurious feel.”</p>
+        <div class="mt-6 font-medium">— Nina K.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- newsletter section (warm neutral) -->
+  <div class="max-w-5xl mx-auto mt-24 px-5">
+    <div class="bg-[#e8dfd5] rounded-4xl p-10 md:p-14 text-center shadow-md" style="border-radius: 3rem;">
+      <h2 class="font-serif text-3xl md:text-4xl text-[#4f3f35]">Subscribe to serenity</h2>
+      <p class="mt-3 text-[#5e4f46]">Get exclusive deals, design inspiration & new arrivals.</p>
+      <div class="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto mt-8">
+        <input type="email" placeholder="Your email" id="newsletterEmail" class="px-6 py-4 rounded-full border-0 flex-1 focus:ring-2 focus:ring-[#a1806b] placeholder-[#9b8a7a]">
+        <button id="newsletterBtn" class="bg-[#6b4f3f] hover:bg-[#83624b] text-white px-8 py-4 rounded-full font-medium transition shadow-md">Subscribe</button>
+      </div>
+      <p id="newsletterMsg" class="text-sm mt-4 text-[#6b4f3f]"></p>
+    </div>
+  </div>
+
+  <!-- footer -->
+  <footer class="bg-[#f2ebe2] mt-24 pt-14 pb-8 border-t border-[#d6c9bc]">
+    <div class="max-w-7xl mx-auto px-5 md:px-8 grid grid-cols-1 md:grid-cols-4 gap-10">
+      <!-- contact -->
+      <div>
+        <h4 class="font-serif text-xl text-[#6b4f3f] mb-4">SofaLux</h4>
+        <p class="text-[#5e4f46]">hello@sofalux.com</p>
+        <p class="text-[#5e4f46]">+1 (800) 456-7890</p>
+        <p class="text-[#5e4f46] mt-2">123 Design Ave, NY</p>
+      </div>
+      <!-- quick links -->
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Explore</h4>
+        <ul class="space-y-2 text-[#5e4f46]">
+          <li><a href="#" class="hover:text-[#6b4f3f]">Home</a></li>
+          <li><a href="#" class="hover:text-[#6b4f3f]">Shop</a></li>
+          <li><a href="#" class="hover:text-[#6b4f3f]">Categories</a></li>
+          <li><a href="#" class="hover:text-[#6b4f3f]">About us</a></li>
+        </ul>
+      </div>
+      <!-- social media -->
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Connect</h4>
+        <div class="flex space-x-5 text-2xl text-[#6b4f3f]">
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-pinterest"></i></a>
+          <a href="#" class="hover:text-[#a1806b]"><i class="fab fa-houzz"></i></a>
+        </div>
+      </div>
+      <!-- small about -->
+      <div>
+        <h4 class="font-medium text-[#6b4f3f] mb-4">Craftsmanship</h4>
+        <p class="text-[#5e4f46] text-sm leading-relaxed">Premium materials, timeless design, and comfort that lasts.</p>
+      </div>
+    </div>
+    <div class="text-center text-[#8e7a6b] text-sm mt-14 border-t border-[#dacfc3] pt-6">© 2026 SofaLux — luxury comfort for every home.</div>
+  </footer>
+
+  <!-- tiny js: mobile menu + newsletter feedback -->
+  <script>
+    (function() {
+      // mobile menu toggle
+      const menuBtn = document.getElementById('menuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+      }
+
+      // newsletter subscription simulation (shows message)
+      const subBtn = document.getElementById('newsletterBtn');
+      const emailInput = document.getElementById('newsletterEmail');
+      const msgBox = document.getElementById('newsletterMsg');
+
+      if (subBtn) {
+        subBtn.addEventListener('click', function() {
+          const email = emailInput.value.trim();
+          if (email && email.includes('@') && email.includes('.')) {
+            msgBox.innerText = '✨ Thank you! You’re now subscribed to SofaLux updates.';
+            emailInput.value = '';
+          } else {
+            msgBox.innerText = 'Please enter a valid email address.';
+          }
+        });
+      }
+
+      // optional: smooth "add to cart" feedback (demo)
+      const addButtons = document.querySelectorAll('.btn-add');
+      addButtons.forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          const originalText = this.innerText;
+          this.innerText = '✓ Added';
+          this.style.backgroundColor = '#a1806b';
+          this.style.color = 'white';
+          setTimeout(() => {
+            this.innerText = originalText;
+            this.style.backgroundColor = '';
+            this.style.color = '';
+          }, 1200);
+        });
+      });
+    })();
+  </script>
+  <!-- ensure mobile menu hidden on window resize > md -->
+  <script>
+    window.addEventListener('resize', function() {
+      if (window.innerWidth >= 768) { // md breakpoint
+        const mobile = document.getElementById('mobileMenu');
+        if (mobile && !mobile.classList.contains('hidden')) {
+          mobile.classList.add('hidden');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
